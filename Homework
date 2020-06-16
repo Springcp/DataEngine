@@ -1,0 +1,13 @@
+import pandas
+from pandas import Series, DataFrame
+import pandas as pd
+data={'语文':[68,95,98,90,80],'数学':[65,76,86,88,90],'英语':[30,98,88,77,90]}
+df=DataFrame(data,index=['张飞','关羽','刘备','典韦','许褚'], columns=['语文','数学','英语'])
+print('平均成绩:', df.mean())                                                                                            
+print('平均成绩:', df.mean())                                                                                            
+print('最大成绩:', df.max())
+print('最小成绩:', df.min())
+print('成绩方差:', df.var())      
+print('成绩标准差:', df.std())
+df['总分']=df.sum(axis=1)
+print(df.sort_values(by='总分', ascending=False))
